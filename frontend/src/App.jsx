@@ -1,8 +1,11 @@
+import LoginButton from "./components/LoginButton"
+
 function App() {
 
   return (
     <>
-      Hello
+    <LoginButton/>
+      Home Page
     </>
   )
 }
