@@ -1,0 +1,23 @@
+services:
+  data-hub-frontend:
+    container_name: data-hub-frontend
+    networks:
+      - application
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ../frontend:/frontend
+    ports:
+      - "5173:5173"
+
+
+networks:
+  application:
+    driver: bridge
+
+# Your Specific Workflow:
+# - Start the backend container for development:
+#     docker compose -f ./docker/compose.yaml up -d
+# - Interact with the running container:
+#     docker exec -it data-hub-frontend sh
