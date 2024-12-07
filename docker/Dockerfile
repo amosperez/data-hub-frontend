@@ -1,3 +1,3 @@
 FROM node:20.17.0
-WORKDIR /backend
+WORKDIR /frontend
 CMD ["tail", "-f", "/dev/null"]
