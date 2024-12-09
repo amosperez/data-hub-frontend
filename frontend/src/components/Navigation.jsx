@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
+import SignUpButton from "./SignUpButton";
 
 export default function Navigation() {
     return (
@@ -30,6 +31,8 @@ export default function Navigation() {
             <NavLink to="/profile" end>
                 Profile
             </NavLink>
+            &nbsp;&nbsp;
+            <SignUpButton/>
             &nbsp;&nbsp;
             <LoginButton/>
             &nbsp;&nbsp;
