@@ -3,10 +3,6 @@ import { useState } from "react";
 
 import { useAuth0 } from "@auth0/auth0-react";
 
-import LoginButton from "./LoginButton";
-import LogoutButton from "./LogoutButton";
-import SignUpButton from "./SignUpButton";
-
 const ProfileDropdown = () => {
   return (
     // {/* Profile dropdown */}
@@ -151,7 +147,7 @@ export default function Navigation() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, logout } = useAuth0();
   return (
     <>
       <nav class="bg-white shadow">
@@ -239,6 +235,14 @@ export default function Navigation() {
                 class="ml-6 inline-flex items-center rounded-md bg-violet-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
               >
                 Login
+              </button>
+              <button
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+                class="ml-6 inline-flex items-center rounded-md bg-violet-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-600"
+              >
+                Logout
               </button>
               {/* <NotificationItem/> */}
               {/* <ProfileDropdown/> */}
